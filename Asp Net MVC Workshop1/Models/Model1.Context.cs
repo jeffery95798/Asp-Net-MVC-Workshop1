@@ -13,10 +13,10 @@ namespace Asp_Net_MVC_Workshop1.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Database1Entities : DbContext
+    public partial class Database1Entities1 : DbContext
     {
-        public Database1Entities()
-            : base("name=Database1Entities")
+        public Database1Entities1()
+            : base("name=Database1Entities1")
         {
         }
     
@@ -25,6 +25,8 @@ namespace Asp_Net_MVC_Workshop1.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<BOOK_CLASS> BOOK_CLASS { get; set; }
         public virtual DbSet<BOOK_CODE> BOOK_CODE { get; set; }
+        public virtual DbSet<BOOK_DATA> BOOK_DATA { get; set; }
     }
 }

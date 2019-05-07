@@ -12,12 +12,17 @@ namespace Asp_Net_MVC_Workshop1.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class BOOK_CODE
+    public partial class BOOK_DATA
     {
-        public string CODE_TYPE { get; set; }
-        public string CODE_ID { get; set; }
-        public string CODE_TYPE_DESC { get; set; }
-        public string CODE_NAME { get; set; }
+        public int BOOK_ID { get; set; }
+        public string BOOK_NAME { get; set; }
+        public string BOOK_CLASS_ID { get; set; }
+        public string BOOK_AUTHOR { get; set; }
+        public Nullable<System.DateTime> BOOK_BOUGHT_DATE { get; set; }
+        public string BOOK_PUBLISHER { get; set; }
+        public string BOOK_NOTE { get; set; }
+        public string BOOK_STATUS { get; set; }
+        public string BOOK_KEEPER { get; set; }
         public Nullable<System.DateTime> CREATE_DATE { get; set; }
         public string CREATE_USER { get; set; }
         public Nullable<System.DateTime> MODIFY_DATE { get; set; }
