@@ -14,8 +14,33 @@ namespace Asp_Net_MVC_Workshop1.Controllers
         // GET: Book
         public ActionResult Index()
         {
-            var books = db.BOOK_CLASS.OrderBy(m => m.BOOK_CLASS_ID).ToList();
-            return View(books);
+            var book = db.BOOK_DATA.OrderBy(m => m.BOOK_CLASS_ID).ToList();
+            return View(book);
         }
+       
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Create(BOOK_DATA data)
+        {
+            db.BOOK_DATA.Add(data);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+
+        public ActionResult Delete(int id)
+        {
+            var c = db.BOOK_CLASS.Where(n => n.BOOK_CLASS_ID == id).FirstOrDefault();
+            db.BOOK_CLASS.Remove(c);
+            db.SaveChanges();
+            return RedirectToAction("index");
+        }
+
+        
+
     }
 }
